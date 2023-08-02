@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   return (
-      <div>
+      <div className='App'>
         <header>
           <h2>Lucy </h2>
           <h3>~ Your smart dream journal ~</h3>
@@ -23,6 +23,7 @@ function App() {
           <input type="text"></input>
           <label>Label 3</label>
           <input type="text"></input>
+          <button type="submit">Submit</button>
         </form>
         <footer></footer>
       </div>
