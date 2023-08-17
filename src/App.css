@@ -14,9 +14,26 @@ nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+  flex-direction: row;
 }
 
 ul {
   list-style-type: none;
   padding: 50px;
 }
+
+.dream_container {
+  display: flex;
+}
+
+.dream {
+  min-height: 200px;
+  width: 200px;
+  margin: 10px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
