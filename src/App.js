@@ -1,10 +1,24 @@
 
 import './App.css';
 import dummy_data from './dummy_data.js';
-//console.log(file[1].text)
+import React, { useState } from 'react';
+import { FiHeart } from 'react-icons/fi';
 
+
+const FormButton = () => {
+  return (
+    <button>
+      <FiHeart icon={FiHeart} />
+    </button>
+  );
+};
 
 function App() {
+
+  const submitClick = () => {
+    console.log("success");
+  };
+
 
   return (
       <div className='App'>
@@ -20,7 +34,8 @@ function App() {
             <li>Menu item 3</li>
           </ul>
         </nav>
-        <form>
+        <div className='container'>
+        <form onClick={submitClick}>
           <label>Title</label>
           <input type="text"></input>
           <label>Date</label>
@@ -29,7 +44,8 @@ function App() {
           <input type="text" placeholder="Describe your dream..."></input>
           <label>Rating</label>
           <input type="text"></input>
-          <button type="submit">Submit</button>
+          <FormButton></FormButton>
+          {/* <button type="submit">Submit</button> */}
         </form>
         <div className="dream_container">
           {dummy_data.map((dream, index) => (
@@ -40,6 +56,7 @@ function App() {
               <p className="dream_rating">{dream.rating}</p>
               </div>
           ))}
+        </div>
         </div>
         <footer></footer>
       </div>
