@@ -1,14 +1,14 @@
 
 import './App.css';
 import dummy_data from './dummy_data.js';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { FiHeart } from 'react-icons/fi';
 
 
 const FormButton = () => {
   return (
     <button>
-      <FiHeart icon={FiHeart} />
+      <FiHeart/>
     </button>
   );
 };
@@ -22,36 +22,45 @@ function App() {
 
   return (
       <div className='App'>
+
+        <nav className="sidebar">
+            <a className="active" href="#">Home</a>
+              <a href="#">Analytics</a>
+              <a href="#">Archive</a>
+              <a href="#">About</a>           
+          </nav>
+
         <header>
           <h1>Lucy </h1>
           <h2>~ Your smart dream journal ~</h2>
           <h3>Journal your dreams and explore your dreamscape. Lucy's smart analytics take care of the rest.</h3>
         </header>
-        <nav className="nav">
-          <ul>
-            <li>Menu item 1</li>
-            <li>Menu item 2</li>
-            <li>Menu item 3</li>
-          </ul>
-        </nav>
+
+
         <div className='container'>
         <form onClick={submitClick}>
           <label>Title</label>
-          <input type="text"></input>
+          <input type="text" placeholder="Give your dream a title"></input>
           <label>Date</label>
           <input type="date"></input>
-          <label>Text</label>
+          <label className ="textInput">Text</label>
           <input type="text" placeholder="Describe your dream..."></input>
-          <label>Rating</label>
-          <input type="text"></input>
+          <input list="labels" className="labels"></input>
+          <datalist id="labels">
+              <option value="Nightmare"/>
+              <option value="Good dream"/>
+              <option value="Special dream"/>
+          </datalist>
+
           <FormButton></FormButton>
-          {/* <button type="submit">Submit</button> */}
+
         </form>
         <div className="dream_container">
           {dummy_data.map((dream, index) => (
             <div className="dream_entry" key={`${dream.title}-${index}`}>
               <p className="dream_title">{dream.title}</p>
               <p className="dream_date">{dream.date}</p>
+              <button type="button" className="collapsible">hide</button>
               <p className="dream_text">{dream.text}</p>
               <p className="dream_rating">{dream.rating}</p>
               </div>
