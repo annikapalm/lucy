@@ -1,6 +1,6 @@
 
 import './App.css';
-import dummy_data from './dummy_data.js';
+import dummy_data from './shared/dummy_data.js';
 // import React, { useState } from 'react';
 import { FiHeart } from 'react-icons/fi';
 
